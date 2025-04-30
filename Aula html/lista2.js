@@ -105,15 +105,22 @@ function exercicio6 (){
     }
 }
 
-function exercicio7(){
+function gerarSenha(){
     const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+    const numeroAleatorio = Math.floor(Math.random() * caracteres.length)
+
+    return caracteres.charAt(numeroAleatorio)
+}
+
+function exercicio7(){
+
+    let quantidade = Number(prompt ("Quantos caracteres você quer na senha? "))
     let senha = ""
-    let tamanho = Number(prompt ("Digite o tamanho da senha: "))
-    
-    for (let i = 0; i < tamanho; i++){
-        let indice = Math.floor(Math.random() * caracteres.length)
-        senha += caracteres[indice]
+    while (quantidade > 0){
+        senha = senha + gerarSenha()
+        quantidade = quantidade - 1
     }
+
     alert ("Senha gerada: " + senha)
 }
 
