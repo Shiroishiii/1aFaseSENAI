@@ -220,51 +220,102 @@ function exercicio20(){
     while (senhaDigitada != senha && tentativas < maxTentativas){
         senhaDigitada = prompt("Digite a senha: ")
         tentativas++
+
+        if (senhaDigitada == senha){
+            alert ("Senha correta!")
+        }else{
+            alert ("Senha incorreta! Você tem " + (maxTentativas - tentativas) + " tentativas restantes.")
+        }
     }
 }
 
-function exercicio34(){
-    let bateria = 0
-
-    while (bateria <= 100){
-        alert ("A bateria está em: " + bateria + "%")
-        bateria += 10
+function exercicio21(){
+    let numero = 1
+    while (numero <= 50){
+        alert ("O número é: " + numero)
+        numero++
+        if (numero === 30){
+            alert ("O número 30 foi encontrado, o loop será encerrado.")
+            break
+        }
     }
 }
 
-function exercicio35(){
-    let bateria = 100
+function exercicio22(){
+    let numero = 1
 
-    while (bateria >= 0){
-        alert ("A bateria está em: " + bateria + "%")
-        bateria -= 10
+    while (numero <= 100){
+        alert ("O número é: " + numero)
+        numero++
+        if (numero === 50){
+            alert ( "O numero é: " + numero +"Tamo contando, tamo contando")
+        }
     }
 }
 
-function exercicio36(){
-    let tempo = 0
-    let tempoMax = 60
+function exercicio23(){
+    let contagem = 10
 
-    while (tempo <= tempoMax){
-        alert ("O tempo é: " + tempo + " segundos.")
-        tempo++
+    while (contagem >= 1){
+        alert ("Contagem regressiva: " + contagem)
+        contagem--
+        if (contagem === 0){
+            alert ("Lançamento!")
+        }
     }
 }
 
-function exercicio37(){
-    let senha = "1234"
-    let senhaDigitada = ""
-    let tentativas = 0
-    let maxTentativas = 5
+function exercicio24(){
+    let numero = 1
 
-    while (senhaDigitada != senha && tentativas < maxTentativas){
-        senhaDigitada = prompt("Digite a senha: ")
-        tentativas++
+    while (numero <= 30){
+        if (numero % 7 == 0){
+            alert ("O número " + numero + " Pulando!")
+        }else{
+            alert ("O número é: " + numero)
+        }
+        numero++
     }
-    if (senhaDigitada == senha){
-        alert ("Senha correta!")
+}
+
+function exercicio25(){
+    let numero = 1
+
+    while (numero <= 20){
+        if (numero % 2 == 0 && numero % 3 == 0){
+            alert ("O número " + numero + " Especial!")
+        }else{
+            alert ("O número é: " + numero)
+        }
+        numero++
+    }
+}
+
+function exercicio26(){
+    let numero = 1
+
+    while (numero <= 10){
+        if (numero >= 5){
+            alert ("O número " + numero + " é maior ou igual a 5")
     }else{
-        alert ("Senha incorreta! Você excedeu o número máximo de tentativas.")
+            alert ("O número " + numero + " é menor que 5")
+        }
+       numero++
     }
 }
 
+function exercicio27(){
+    let numero = 1
+    let limite = Math.floor(Math.random() * 10) + 1
+
+    while (numero <= limite){
+        alert ("O número é: " + numero)
+        numero++
+    }
+}
+
+function exercicio28(){
+    let divnumero = Number(prompt("Digite um número para saber seus divisores: "))
+    
+
+}
