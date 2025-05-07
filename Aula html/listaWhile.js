@@ -315,7 +315,289 @@ function exercicio27(){
 }
 
 function exercicio28(){
-    let divnumero = Number(prompt("Digite um número para saber seus divisores: "))
-    
+    let numeroDiv = Number(prompt("Digite um número para ver os divisores: "))
+    let divisor = 1
 
+    while (divisor <= numeroDiv){
+        if (numeroDiv % divisor == 0){
+            alert ("O número " + divisor + " é divisor de " + numeroDiv)
+        }
+        divisor++
+    }
+}
+
+function exercicio29(){
+    let numero = 1
+
+    while (numero <= 20){
+        alert ("O número é: " + numero)
+        numero += 2
+    }
+}
+
+function exercicio30(){
+    let numero = 1
+    let numerosDivPorNove = 0
+
+    while (numero <= 100){
+        if (numero % 9 == 0){
+            alert ("O número é: " + numero + " é divisível por 9")
+            numerosDivPorNove++
+        }else{
+            alert ("O número é: " + numero)
+        }
+        numero++
+    }
+}
+
+function exercicio31(){
+    let numero = 50
+
+    while (numero >= 0){
+        if (numero % 5 == 0){
+            alert ("Pula! Multiplo de 5")
+    }else{
+            alert ("O número é: " + numero)
+    }
+    numero--
+    }
+}
+
+function exercicio32(){
+    let contador = 1
+    let soma = 0
+
+    while (contador <= 100){
+        if  (contador % 2 == 0){
+            soma += contador
+            alert ("A soma dos números pares de 1 a 100 é: " + soma)
+        }else{
+            alert ("O número " + contador + " é ímpar.")
+        }
+        contador++
+    }
+}
+
+function exercicio33(){
+    let sinaleira = ["Verde", "Amarelo", "Vermelho"]
+    let contador = 0
+    let tempo = 0
+
+    while (contador < 10){
+        alert ("Sinal: " + sinaleira[contador % 3])
+        contador++
+        tempo += 5
+        alert ("Tempo: " + tempo + " segundos")
+    }
+}
+
+function exercicio34(){
+    let bateria = 0
+
+    while (bateria < 100){
+        alert ("A bateria está em: " + bateria + "%")
+        bateria += 10
+        if (bateria == 100){
+            alert ("Bateria cheia!")
+        }
+    }
+}
+
+function exercicio35(){
+    let bateria = 100
+
+    while (bateria > 0){
+        alert ("A bateria está em: " + bateria + "%")
+        bateria -= 10
+        if (bateria == 0){
+            alert ("Bateria descarregada!")
+        }
+    }
+}
+
+function exercicio36(){
+    let tempo = 0
+
+    while (tempo <= 60){
+        alert ("O tempo é: " + tempo + " segundos")
+        tempo++
+        if (tempo == 60){
+            alert ("O tempo acabou!")
+        }
+    }
+}
+
+function exercicio37(){
+    let senha = Number(prompt("Digite a senha: "))
+    let senhaCorreta = 1234
+    let tentativas = 0
+    let maxTentativas = 5
+
+    while (senha != senhaCorreta && tentativas < maxTentativas){
+        alert ("Senha incorreta! Você tem " + (maxTentativas - tentativas) + " tentativas restantes.")
+        senha = Number(prompt("Digite a senha: "))
+        tentativas++
+        if (senha == senhaCorreta){
+            alert ("Senha correta!")
+        }
+    }
+}
+
+function exercicio38(){
+    let passos = 0
+    let distancia = 10
+
+    while (passos >= distancia){
+        console.log ("Você andou " + passos + " passos.")
+        passos++
+    }
+}
+
+function exercicio39(){
+    let carregamento = "█"
+    let porcentagem = 0
+    let totalCarregamento = 10
+    let totalCarregado = 0
+
+    while (totalCarregado < totalCarregamento){
+        alert ("Carregando: " + carregamento.repeat(totalCarregado) + " " + porcentagem + "%")
+        porcentagem += 10
+        totalCarregado++
+        if (totalCarregado == totalCarregamento){
+            alert ("Carregamento completo!")
+        }
+    }
+}
+
+function exercicio40(){
+    let gasolina = 100
+    let consumo = 10
+    let distancia = 0
+
+    while (gasolina > 0){
+        alert ("Você tem " + gasolina + " litros de gasolina.")
+        distancia += consumo
+        gasolina -= consumo
+        alert ("Você andou " + distancia + " km.")
+        if (gasolina <= 0){
+            alert ("Você ficou sem gasolina!")
+        }
+    }
+}
+
+function exercicio41(){
+    let numero = 1
+
+    while (numero <= 100){
+        if (numero % 8 == 0){
+            alert ("Pula! Multiplo de 8")
+        }else{
+            alert ("O número é: " + numero)
+        }
+        numero++
+    }
+}
+
+function exercicio42(){
+    let numero = 6
+    let numeroDeSorte = Math.floor(Math.random() * 6) + 1
+    let tentativas = 0
+
+    while (numeroDeSorte == numero){
+        if (numero != numeroDeSorte){
+            alert ("Role o dado novamente!")
+        }else{
+            alert ("Você acertou o número 6: " + numeroDeSorte)
+        }
+        tentativas++
+        break
+    }
+}
+
+function exercicio43(){
+    let numero = 1
+
+    while (numero <= 100){
+        if (numero % numero == 0 && numero % 1 == 0 && numero != 1 && numero % 2 != 0 && numero % 3 != 0){
+            alert ("O número " + numero + " é primo.")
+        }else{
+            alert ("O número " + numero + " não é primo.")
+        }
+        numero++
+    }
+}
+
+function exercicio44(){
+    let numero = 1
+    let soma = 0
+    let somaMaxima = 1000
+    let quantidade = 0
+
+    while (soma <= somaMaxima){
+        alert ("A soma é: " + soma + " e a quantidade de vezes que o número 1 foi somado é: " + quantidade)
+        soma += numero
+        quantidade++
+        if (soma > somaMaxima){
+            alert ("A soma ultrapassou 1000, o loop será encerrado.")
+            break
+        }
+    }
+}
+
+function exercicio45(){
+    let dowload = 0
+
+    while (dowload < 100){
+        dowload += 10
+        alert ("Download em progresso: " + dowload + "%")
+        if (dowload == 100){
+            alert ("Download completo!")
+        }
+    }
+}
+
+function exercicio46(){
+    let tempo = 1
+    let tempoMaximo = 5
+
+    while (tempo <= tempoMaximo){
+        alert ("O tempo é: " + tempo + " segundos")
+        tempo++
+        if (tempo == tempoMaximo){
+            alert ("O tempo acabou!")
+        }
+    }
+}
+
+function exercicio47(){
+    let senhaDigitada = ""
+    let tentativas = 0
+    let maxTentativas = 4
+
+    while (tentativas < maxTentativas){
+        senhaDigitada = prompt("Digite a senha: ")
+        tentativas++
+        if (tentativas == maxTentativas){
+            alert ("Senha correta!")
+        }else{
+            alert ("Senha incorreta! Você tem " + (maxTentativas - tentativas) + " tentativas restantes.")
+        }
+    }
+}
+
+function exercicio48(){
+    let numero = 1
+
+    while (numero <= 100){
+        if (numero % 3 == 0 && numero % 5 == 0){
+            alert ("O número é: " + numero + " FizzBuzz")
+        }else if (numero % 3 == 0){
+            alert ("O número é: " + numero + " Multiplo de 3")
+        }else if (numero % 5 == 0){
+            alert ("O número é: " + numero + " Multiplo de 5")
+        }else{
+            alert ("O número é: " + numero)
+        }
+        numero++
+    }
 }
