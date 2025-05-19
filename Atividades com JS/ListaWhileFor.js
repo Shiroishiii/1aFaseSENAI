@@ -286,5 +286,101 @@ function exercicio20(){
 }
 
 function exercicio21(){
-    
+    for(let num = 1; num <= 100; num++){
+        if (num % 3 == 0 || num % 2 == 0){
+            alert ("Número: " + num)
+        }else{
+            alert ("Número: " + num + " não é divisível por 3 nem é par")
+        }
+    }
+}
+
+function exercicio22(){
+    for(let num = 1; num <= 50; num++){
+        if (num % 7 == 0 || num % 2 != 0){
+            alert ("Número: " + num)
+        }else{
+            alert ("Número: " + num + " não é divisível por 7 nem é ímpar")
+        }
+    }
+}
+
+function exercicio23(){
+    for(let num = 1; num <= 30; num++){
+        if (num % 2 != 0 && num % 3 != 0){
+            alert ("Número: " + num)
+        }else{
+            alert ("Número: " + num + " é divisível por 2 e 3")
+        } 
+    }
+}
+
+function exercicio24(){
+    for(let num = 1; num <= 100; num++){
+        if (num >= 10 && num <= 20 || num >= 90 && num <= 100){
+            alert ("Número: " + num)
+        }else{
+            alert ("Número: " + num + " não está entre 10 e 20 nem entre 90 e 100")
+        }
+    }
+}
+
+function exercicio25(){
+    for (let num = 0; num <= 20; num++){
+        if (num % 4 == 0 && num % 8 != 0){
+            alert ("Número: " + num)
+        }else{
+            alert ("Número: " + num + " não é divisível por 4 e não é múltiplo de 8")
+        }
+    }
+}
+
+function exercicio26(){
+    for(let num = 1; num <= 50; num++){
+        if (num > 30 && num < 40 || num % 10 === 0){
+            alert ("Número: " + num)
+        }else{
+            alert ("Número: " + num + " não está entre 30 e 40 nem é múltiplo de 10")
+        }
+    }
+}
+
+function exercicio27(){
+    for( let num = 1; num <= 20; num++){
+        if (num % 5 == 0 && num % 2 == 0){
+            alert ("Número: " + num)
+        }else{
+            alert ("Número: " + num + " não é divisível por 5 e não é par")
+        }
+    }
+}
+
+function exercicio28(){
+    for (let num = 1; num <= 100; num++){
+        if (num % 6 == 0 && num % 9 != 0){
+            alert ("Número: " + num)
+        }else{
+            alert ("Número: " + num + " não é divisível por 6 e não é múltiplo de 9")
+        }
+    }   
+}
+
+function exercicio29(){
+    for (let num = 1; num <= 50; num++){
+        if (num < 10 || num > 40 ){
+            alert ("Número: " + num)
+        }else{
+            alert ("Número: " + num + " não é menor que 10 e nem maior que 40")
+        }
+    }
+}
+
+function exercicio30(){
+    for(let num = 1; num <= 30; num++){
+        if (num % 3 == 0 && num > 10 && num < 25){
+            alert ("Número: " + num + " Especial!!")
+        }else{
+            alert ("Número: " + num)
+        }
+    }
 }
