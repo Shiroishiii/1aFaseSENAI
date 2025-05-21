@@ -6,6 +6,8 @@ body {
     background-position: center;
     font-family: 'Courier New', Courier, monospace;
     color: #fff;
+    align-items: center;    
+    justify-content: center;
 }
 
 .btn-12,
