@@ -7,29 +7,31 @@
     <title>Telas</title>
 </head>
 <body>
-    <nav>
+    <nav id="navbar">
         <button onclick="mostrarLogin()">Login</button>
         <button onclick="mostrarCadastro()">Cadastro</button>
         <button onclick="mostrarProdutos()">Produtos</button>
     </nav>
-    <h1>Teste login/cadastro</h1>
-    <section id="login">
-        <h2>Login</h2>
-        <div class="ContainerInput">
-            <label for="">Nome</label>
-            <input type="text" id="inpLogNome">
-        </div>
-        <div class="ContainerInput">
-            <label for="">Senha</label>
-            <input type="password" id="inpLogSenha">
-        </div>
-        <button onclick="logar()">Logar</button>
-    </section>
-    <section id="cadastro">
-        <h2>Cadastro</h2>
-        <div class="ContainerInput">
-            <label for="">Nome</label>
-            <input type="text" id="inpCadNome">
+    <main>
+
+        <section id="login">
+            <h1>Login</h1>
+            <div class="ContainerInput">
+                <label for="">Nome</label>
+                <input type="text" id="inpLogNome">
+            </div>
+            <div class="ContainerInput">
+                <label for="">Senha</label>
+                <input type="password" id="inpLogSenha">
+            </div>
+            <button onclick="mostrarCadastro()" class="bt-secundario">Não tem cadastro?</button>
+            <button onclick="logar()">Logar</button>
+        </section>
+        <section id="cadastro">
+            <h1>Cadastro</h1>
+            <div class="ContainerInput">
+                <label for="">Nome</label>
+                <input type="text" id="inpCadNome">
         </div>
         <div class="ContainerInput">
             <label for="">Email</label>
@@ -39,11 +41,13 @@
             <label for="">Senha</label>
             <input type="password" id="inpCadSenha">
         </div>
+        <button onclick="mostrarLogin()" class="bt-secundario">Já tem login?</button>
         <button onclick="cadastrar()">Cadastrar</button>
     </section>
     <section id="produtos">
-        <h2>Produtos</h2>
+        <h1>Produtos</h1>
     </section>
+</main>
     <script src="script.js"></script>
 </body>
 </html>

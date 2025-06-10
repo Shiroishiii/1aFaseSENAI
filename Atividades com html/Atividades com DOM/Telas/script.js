@@ -1,51 +1,57 @@
 inicializar()
 
-let usuario = {
-    nome: '',
-    email: '',
-    senha: ''
-}
+let usuarios = []
+
 
 function cadastrar(){
-    usuario.nome =document.getElementById('inpCadNome').value
-    usuario.email = document.getElementById('inpCadEmail').value
-    usuario.senha = document.getElementById('inpCadSenha').value
+    let usuario = {
+        nome: document.getElementById('inpCadNome').value,
+        email: document.getElementById('inpCadEmail').value,
+        senha: document.getElementById('inpCadSenha').value
+    }
+
+    usuarios.push(usuario)
+    limparInputs()
+    mostrarLogin()
 
     alert("Cadastrado com sucesso!! ;D")
 
-    limparInputs()
-    mostrarLogin()
+    console.log(usuarios)
 }
 
 function logar(){
     let nome = document.getElementById('inpLogNome').value
     let senha = document.getElementById('inpLogSenha').value
 
-    if(nome === usuario.nome && senha === usuario.senha){
-        alert ("Login efetuado com sucesso!")
-
-        limparInputs()
-        mostrarProdutos()
-    }else{
-        alert ("Login ou senha incorretos")
+    for(let i = 0; i < usuarios.length; i++){
+        if((nome === usuarios[i].nome || nome === usuarios[i].email) && senha === usuarios[i].senha){
+            alert("Login efetuado com sucesso!! ;D " + usuarios[i].nome)
+            limparInputs()
+            mostrarProdutos() 
+        }else{
+            alert("Usuário ou senha inválidos!! :(")
+        }
     }
 }
 
 function mostrarLogin(){
     esconderTodas()
     document.getElementById ('login').style.display = "flex"
+    document.getElementById('navbar').style.display = "none"
     document.getElementById('inpLogNome').focus()
 }
 
 function mostrarCadastro(){
     esconderTodas()
     document.getElementById('cadastro').style.display = "flex"
+    document.getElementById('navbar').style.display = "none"
     document.getElementById('inpCadNome').focus()
 }
 
 function mostrarProdutos(){
     esconderTodas()
     document.getElementById('produtos').style.display = "flex"
+    document.getElementById('navbar').style.display = "flex"
 }
 
 function esconderTodas(){
@@ -55,12 +61,12 @@ function esconderTodas(){
 }
 
 function limparInputs(){
-    document.getElementById('inpCadNome') = ''
-    document.getElementById('inpCadEmail') = ''
-    document.getElementById('inpCadSenha')  = ''
+    document.getElementById('inpCadNome').value = ''
+    document.getElementById('inpCadEmail').value = ''
+    document.getElementById('inpCadSenha').value  = ''
 
-    document.getElementById('inpLogNome') = ''
-    document.getElementById('inpLogSenha') = ''
+    document.getElementById('inpLogNome').value = ''
+    document.getElementById('inpLogSenha').value = ''
 }
 
 function inicializar(){
