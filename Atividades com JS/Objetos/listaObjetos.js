@@ -287,26 +287,205 @@ banco.relatorio()
 // Crie um objeto que armazene votos por candidato. Implemente funções para
 // votar e retornar o candidato mais votado.
 
+const sistemaVotacao = {
+  candidatos: {
+    candidato1: 0,
+    candidato2: 0 
+  },
+
+  votar(nome){
+    if (this.candidatos[nome] !== undefined){
+      this.candidatos[nome]++
+    }else{
+      console.log(`Candidato ${nome} não existe.`)
+    }
+  },
+
+  maisVotado(){
+    let vencedor = null
+    let maiorVoto = -1
+
+    for (let nome in this.candidatos){
+      if (this.candidatos[nome] > maiorVoto){
+        maiorVoto = this.candidatos[nome]
+        vencedor = nome
+      }
+    }
+    return vencedor
+  }
+}
+
+sistemaVotacao.votar("candidato1")
+sistemaVotacao.votar("candidato2")
+sistemaVotacao.votar("candidato1")
+
+console.log("Candidato mais votado " + sistemaVotacao.maisVotado())
+
 // 3. Agenda Semanal de Compromissos
 // Crie um objeto com os dias da semana como chaves e arrays de
 // compromissos como valores. Implemente métodos para adicionar, remover e
 // listar compromissos.
+
+const agendaSemanal = {
+  Segunda: [],
+  Terça: [],
+  Quarta: [],
+  Quinta: [],
+  Sexta: [],
+  Sabado: [],
+  Domingo: [],
+
+  adicionar(dia, compromisso){
+    if (this[dia] === undefined) {
+      console.log(`Dia ${dia} inválido`)
+      return
+    }
+    this[dia].push(compromisso)
+  },
+
+  remover(dia, compromisso){
+    if (this[dia] === undefined){
+      console.log (`Dia ${dia} inválido`)
+      return
+    }
+
+    const index = this[dia].indexOf(compromisso)
+    if (index !== -1) {
+      this[dia].splice(index, 1)
+      console.log(`Compromisso "${compromisso}" removido do ${dia}.`)
+    } else {
+      console.log(`Compromisso "${compromisso}" não encontrado no ${dia}.`)
+    }
+  },
+}
+
+agendaSemanal.adicionar("Segunda", "Reunião com o cliente")
+agendaSemanal.adicionar("Terça", "Consulta médica")
+agendaSemanal.adicionar("Quarta", "Treino de futebol")
+agendaSemanal.adicionar("Quinta", "Reunião de equipe")
+
+agendaSemanal.remover("Quarta", "Treino de futebol")
+agendaSemanal.remover("Sexta", "Reunião de equipe") // (não existe esse dia na agenda)
 
 // 4. Gerador de Fichas de RPG
 // Crie uma função que retorna objetos representando personagens com
 // atributos aleatórios (força, destreza, vida). Permita criar múltiplos
 // personagens e armazenar em um array.
 
+function gerarPersonagem(nome) {
+  const forca = Math.floor(Math.random() * 20) + 1; // Força entre 1 e 20
+  const destreza = Math.floor(Math.random() * 20) + 1; // Destreza entre 1 e 20
+  const vida = Math.floor(Math.random() * 100) + 1; // Vida entre 1 e 100
+
+  return {
+    forca,
+    destreza,
+    vida,
+    descrever() {
+      return `Força: ${this.forca}, Destreza: ${this.destreza}, Vida: ${this.vida}`;
+    }
+  };
+}
+
+const personagens = [];
+
+function criarPersonagem(qntd) {
+  for (let i = 0; i < qntd; i++) {
+    const nome = `Personagem ${i + 1}`;
+    const personagem = gerarPersonagem(nome);
+    personagens.push(personagem);
+  }
+}
+
+criarPersonagem(5);
+
+personagens.forEach((personagem, index) => {
+  console.log(`Personagem ${index + 1}: ${personagem.descrever()}`);
+});
+
 // 5. Validador de Formulário com Objeto
 // Crie uma função que recebe um objeto com campos ( nome , email , idade ) e
 // valida cada campo com regras diferentes, retornando um objeto com
 // mensagens de erro ou sucesso.
+
+function validarFormulario(dados) {
+  const erros = {};
+
+  // Validação do nome
+  if (!dados.nome || dados.nome.length < 3) {
+    erros.nome = "Nome inválido. Deve ter pelo menos 3 caracteres.";
+  }
+
+  // Validação do email
+  if (!dados.email || !dados.email.includes("@")) {
+    erros.email = "Email inválido.";
+  }
+
+  // Validação da idade
+  if (!dados.idade || dados.idade < 0) {
+    erros.idade = "Idade inválida.";
+  }
+
+  return {
+    valido: Object.keys(erros).length === 0,
+    erros
+  };
+}
+
+console.log(validarFormulario({ nome: "João", email: "joão@example.com", idade: 25 }));
 
 // 6. Sistema de Gestão de Projetos
 // Crie uma estrutura com objetos projeto , cada um contendo nome, status e uma
 // lista de tarefas . Cada tarefa tem nome, data e status. Implemente métodos para
 // alterar status e listar tarefas por status.
 
+const projeto = {
+  nome: "Desenvolvimento de Site",
+  status: "Em andamento",
+  tarefas: [
+    { nome: "Planejamento", data: "2023-10-01", status: "Concluída" },
+    { nome: "Desenvolvimento", data: "2023-10-05", status: "Em andamento" },
+    { nome: "Testes", data: "2023-10-10", status: "Pendente" }
+  ],
+
+  alterarStatusTarefa(nomeTarefa, novoStatus) {
+    const tarefa = this.tarefas.find(t => t.nome === nomeTarefa);
+    if (tarefa) {
+      tarefa.status = novoStatus;
+      console.log(`Status da tarefa "${nomeTarefa}" alterado para "${novoStatus}".`);
+    } else {
+      console.log(`Tarefa "${nomeTarefa}" não encontrada.`);
+    }
+  },
+
+  listarTarefasPorStatus(status) {
+    const tarefasFiltradas = this.tarefas.filter(t => t.status === status);
+    console.log(`Tarefas com status "${status}":`);
+    tarefasFiltradas.forEach(t => console.log(`- ${t.nome} (Data: ${t.data})`));
+  }
+};
+
+console.log(`Projeto: ${projeto.nome}`);
+console.log(`Status: ${projeto.status}`);
+projeto.alterarStatusTarefa("Desenvolvimento", "Concluída");
+projeto.listarTarefasPorStatus("Concluída");
+
 // 7. Simulador de Jogo de Dados
 // Crie um objeto jogoDeDados com métodos para rolar dois dados, registrar
 // histórico e contar quantas vezes saiu um número específico.
+
+const jogoDeDados = {
+  historico: [],
+  rolarDados() {
+    const dado1 = Math.floor(Math.random() * 6) + 1;
+    const dado2 = Math.floor(Math.random() * 6) + 1;
+    this.historico.push({ dado1, dado2 });
+    return { dado1, dado2 };
+  },
+  contarOcorrencias(numero) {
+    return this.historico.filter(resultado => resultado.dado1 === numero || resultado.dado2 === numero).length;
+  }
+};
+const resultado = jogoDeDados.rolarDados();
+console.log(`Rolagem: Dado 1: ${resultado.dado1}, Dado 2: ${resultado.dado2}`);
+console.log(`Histórico:`, jogoDeDados.historico); 
