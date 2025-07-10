@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista LocalStorage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>💽 Lista de exercícios LocalStorage</h1>
+    <h2>1. Contador Persistente</h2>
+    <p>Crie um contador com botões “+” e “−”. O número deve ser
+salvo no localStorage e restaurado ao recarregar a página.</p>
+        <div>
+            <h3>contador: <span id="cont">0</span></h3>
+            <button id="btnAdd" onclick="alterarCont(1)">+</button>
+            <button id="btnSub" onclick="alterarCont(-1)">-</button>
+        </div>
+    <h2>2. Texto Salvo</h2>
+    <p>Crie um textarea onde o texto digitado seja salvo
+        automaticamente no localStorage a cada digitação. Ao
+        recarregar a página, o texto deve reaparecer.
+        </p>
+        <h3>Digite algo:</h3>
+        <textarea name="" id="meuTexto" rows="5" cols="20"></textarea>
+    <h2>3. Checkbox Persistente</h2>
+    <p>Faça uma lista de tarefas com checkboxes. Ao marcar uma
+        tarefa como feita, essa informação deve ser salva no
+        localStorage.
+        </p>
+    <h2>4. Nome do Usuário</h2>
+    <p>Ao acessar a página, pergunte o nome do usuário (via prompt
+        ou input). Salve esse nome e cumprimente o usuário nas
+        visitas seguintes: “Olá, [nome]!”
+        </p>
+    <h2>5. Escolha de Cor</h2>
+    <p>Crie três botões com cores diferentes. Quando o usuário clicar
+        em uma cor, o fundo da página muda e essa preferência é
+        salva no localStorage.</p>
+    <h2>6. Modo Noturno</h2>
+    <p>Adicione um botão “Modo Escuro”. Quando ativado, o fundo e
+        os textos da página mudam, e essa escolha é salva para
+        manter o tema mesmo após recarregar a página.
+        </p>
+    <h2>7. Visita Diária</h2>
+    <p>Mostre uma mensagem como “Bem-vindo de volta!” caso a
+        última visita tenha sido no mesmo dia, e “Saudades de você!”
+        se foi em outro dia. Use localStorage para salvar a data.</p>
+    <h2>8. Última Visita</h2>
+    <p>Salve a data e hora da última visita do usuário e mostre-a ao
+        entrar novamente na página: “Última visita: 29/06/2025 22:30”</p>
+    <h2>9. Mensagem de Boas-vindas Personalizada</h2>
+    <p>Crie um campo de texto onde o usuário digita uma mensagem
+        de boas-vindas. Essa mensagem deve ser exibida no topo da
+        página e salva no localStorage.
+        </p>
+    <h2>10. Número Secreto</h2>
+    <p>Gere um número aleatório entre 1 e 10 e salve no localStorage.
+        O usuário deve tentar adivinhar o número. Mesmo que ele
+        feche o navegador, o número continua sendo o mesmo até ele
+        acertar.
+        </p>
+
+        <script src="listaLocalStorage.js"></script>
+</body>
+</html>

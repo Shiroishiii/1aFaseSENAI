@@ -1,0 +1,46 @@
+body{
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#btnAdd{
+    background-color: grey;
+    color: #ffff;
+    border: none;
+    margin: 10px;
+    max-width: 30px;
+    justify-content: center;
+}
+
+#btnAdd:hover{
+    background-color: aquamarine;
+    color: #ffff;
+    border: none;
+    margin: 10px;
+    max-width: 30px;
+    justify-content: center;
+    scale: 1.1;
+}
+
+#btnSub{
+    background-color: grey;
+    color: #ffff;
+    border: none;
+    margin: 10px;
+    max-width: 30px;
+    justify-content: center;
+}
+
+#btnSub:hover{
+    background-color: aquamarine;
+    color: #ffff;
+    border: none;
+    margin: 10px;
+    max-width: 30px;
+    justify-content: center;
+    scale: 1.1;
+}
+
