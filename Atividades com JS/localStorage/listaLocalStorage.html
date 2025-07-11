@@ -28,38 +28,65 @@ salvo no localStorage e restaurado ao recarregar a página.</p>
         tarefa como feita, essa informação deve ser salva no
         localStorage.
         </p>
+        <h3>Lista de Tarefas:</h3>
+        <ul>
+            <li><input type="checkbox" id="tarefa1"> Estudar</li>
+            <li><input type="checkbox" id="tarefa2"> Ler</li>
+            <li><input type="checkbox" id="tarefa3"> Lavar louça</li>
+        </ul>
     <h2>4. Nome do Usuário</h2>
     <p>Ao acessar a página, pergunte o nome do usuário (via prompt
         ou input). Salve esse nome e cumprimente o usuário nas
         visitas seguintes: “Olá, [nome]!”
         </p>
+        <h3 id="mensagem"></h3>
     <h2>5. Escolha de Cor</h2>
     <p>Crie três botões com cores diferentes. Quando o usuário clicar
         em uma cor, o fundo da página muda e essa preferência é
         salva no localStorage.</p>
+        <div>
+            <h3>Escolha a cor</h3>
+            <button onclick="mudarCor('red')">vermelho</button>
+            <button onclick="mudarCor('green')">verde</button>
+            <button onclick="mudarCor('blue')">azul</button>
+        </div>
     <h2>6. Modo Noturno</h2>
     <p>Adicione um botão “Modo Escuro”. Quando ativado, o fundo e
         os textos da página mudam, e essa escolha é salva para
         manter o tema mesmo após recarregar a página.
         </p>
+        <div>
+            <button onclick="alternarModo()">Alternar Modo</button>
+            <h3>Modo Claro / Escuro</h3>
+        </div>
     <h2>7. Visita Diária</h2>
     <p>Mostre uma mensagem como “Bem-vindo de volta!” caso a
         última visita tenha sido no mesmo dia, e “Saudades de você!”
         se foi em outro dia. Use localStorage para salvar a data.</p>
+        <h3 id="msg"></h3>
     <h2>8. Última Visita</h2>
     <p>Salve a data e hora da última visita do usuário e mostre-a ao
         entrar novamente na página: “Última visita: 29/06/2025 22:30”</p>
+        <h3 id="ultimaVisita"></h3>
     <h2>9. Mensagem de Boas-vindas Personalizada</h2>
     <p>Crie um campo de texto onde o usuário digita uma mensagem
         de boas-vindas. Essa mensagem deve ser exibida no topo da
         página e salva no localStorage.
         </p>
+        <h3 id="mensagemTopo"></h3>
+        <input type="text" id="mensagemInput" placeholder="Digite sua mensagem">
     <h2>10. Número Secreto</h2>
     <p>Gere um número aleatório entre 1 e 10 e salve no localStorage.
         O usuário deve tentar adivinhar o número. Mesmo que ele
         feche o navegador, o número continua sendo o mesmo até ele
         acertar.
         </p>
+        <div>
+            <h3>Advinhe o número (1 a 10):</h3>
+            <input type="number" id="palpite" min="1" max="10">
+            <button onclick="adivinharNumero()">Adivinhar</button>
+            <p id="resposta"></p>
+        </div>
 
         <script src="listaLocalStorage.js"></script>
 </body>

@@ -1,5 +1,4 @@
 body{
-    background-color: antiquewhite;
     display: flex;
     flex-direction: column;
     font-size: 15px;
@@ -44,3 +43,12 @@ body{
     scale: 1.1;
 }
 
+body.modo-escuro {
+    background-color: #222;
+    color: #ffffff;
+}
+
+body.modo-claro {
+    background-color: #ffffff;
+    color: #000000;
+}
